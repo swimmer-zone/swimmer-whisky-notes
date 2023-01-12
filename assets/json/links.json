@@ -1,0 +1,18 @@
+[
+    { "title": "Shops", "links": [
+        { "id": 1, "title": "Van der Heijden", "href": "https://www.heijdenwijnimport.nl/" },
+        { "id": 2, "title": "Topdrinks", "href": "https://www.topdrinks.nl/" },
+        { "id": 3, "title": "Drankgigant", "href": "https://www.drankgigant.nl/" },
+        { "id": 4, "title": "Gall & Gall", "href": "https://www.gall.nl/" },
+        { "id": 5, "title": "Whisky Me", "href": "https://whisky-me.com/" }
+    ] },
+    { "title": "Wiki Pages", "links": [
+        { "id": 1, "title": "Whisky (general)", "href": "https://en.wikipedia.org/wiki/Whisky" },
+        { "id": 2, "title": "Irish Whiskey", "href": "https://en.wikipedia.org/wiki/Irish_whiskey" },
+        { "id": 3, "title": "Scotch Whisky", "href": "https://en.wikipedia.org/wiki/Scotch_whisky" },
+        { "id": 4, "title": "American Whiskey", "href": "https://en.wikipedia.org/wiki/American_whiskey" }
+    ] },
+    { "title": "Other References", "links": [
+        { "id": 1, "title": "See whisky types", "href": "https://grimsdyke.com/whisky-types/" }
+    ] }
+]

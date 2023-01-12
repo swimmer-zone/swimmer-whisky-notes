@@ -1,0 +1,9 @@
+[
+  { "value": "", "label": "-- Select Region --" },
+  { "value": "highland", "label": "Highland" },
+  { "value": "lowland", "label": "Lowland" },
+  { "value": "speyside", "label": "Speyside" },
+  { "value": "islay", "label": "Islay" },
+  { "value": "islands", "label": "Islands" },
+  { "value": "campbeltown", "label": "Campbeltown" }
+]

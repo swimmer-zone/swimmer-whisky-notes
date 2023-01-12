@@ -1,0 +1,37 @@
+{
+  "expo": {
+    "name": "swimmer-whisky-notes",
+    "slug": "swimmer-whisky-notes",
+    "version": "0.1.0",
+    "orientation": "portrait",
+    "icon": "./assets/images/logo64.png",
+    "userInterfaceStyle": "light",
+    "splash": {
+      "image": "./assets/images/logo512.png",
+      "resizeMode": "contain",
+      "backgroundColor": "#6c6eec"
+    },
+    "updates": {
+      "fallbackToCacheTimeout": 0
+    },
+    "assetBundlePatterns": [
+      "**/*"
+    ],
+    "ios": {
+      "supportsTablet": true
+    },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/images/logo64.png",
+        "backgroundColor": "#6c6eec"
+      }
+    },
+    "web": {
+      "favicon": "./assets/images/logo64.png"
+    }
+  },
+  "packagerOpts": {
+    "config": "metro.config.js",
+    "sourceExts": ["js", "jsx", "svg", "ttf"]
+  }
+}

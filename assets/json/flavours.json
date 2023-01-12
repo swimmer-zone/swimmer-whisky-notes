@@ -1,0 +1,14 @@
+[
+  { "value": "", "label": "-- Select Flavour --" },
+  { "value": "Dark Fruit", "label": "Dark Fruit" },
+  { "value": "Floral", "label": "Floral" },
+  { "value": "Spicy", "label": "Spicy" },
+  { "value": "Cereal", "label": "Cereal" },
+  { "value": "Peaty", "label": "Peaty" },
+  { "value": "Malty", "label": "Malty" },
+  { "value": "Toffee", "label": "Toffee" },
+  { "value": "Nutty", "label": "Nutty" },
+  { "value": "Woody", "label": "Woody" },
+  { "value": "Chocolate", "label": "Chocolate" },
+  { "value": "Citrus", "label": "Citrus" }
+]

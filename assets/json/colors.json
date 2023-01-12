@@ -1,0 +1,11 @@
+[
+    { "id": 1, "value": "Clear", "hex": "#ffffff" },
+    { "id": 2, "value": "White Wine", "hex": "#EEEDC4" },
+    { "id": 3, "value": "Straw", "hex": "#ECBF7A" },
+    { "id": 4, "value": "Honey", "hex": "#EBA937" },
+    { "id": 5, "value": "Golden", "hex": "#C09711" },
+    { "id": 6, "value": "Amber", "hex": "#FFBF00" },
+    { "id": 7, "value": "Copper", "hex": "#B87333" },
+    { "id": 8, "value": "Mahogany", "hex": "#6C4324" },
+    { "id": 9, "value": "Dark Oak", "hex": "#8B6145" }
+]

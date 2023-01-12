@@ -1,0 +1,15 @@
+[
+  { "value": "", "label": "-- Select Type --" },
+  { "group": "Malt Whisky", "types": [
+    { "value": "Single Grain", "label": "Single Grain" },
+    { "value": "Blended Grain", "label": "Blended Grain" }
+  ] },
+  { "group": "Grain Whisky", "types": [
+    { "value": "Single Malt", "label": "Single Malt" },
+    { "value": "Blended Malt", "label": "Blended Malt" },
+    { "value": "Blended Scotch", "label": "Blended Scotch" },
+    { "value": "Bourbon", "label": "Bourbon" },
+    { "value": "Rye", "label": "Rye" }
+  ] },
+  { "value": "New Make", "label": "New Make" }
+]

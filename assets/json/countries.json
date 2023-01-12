@@ -1,0 +1,22 @@
+[
+  { "value": "", "label": "-- Select Country --" },
+  { "value": "Canada", "label": "Canada" },
+  { "value": "Ireland", "label": "Ireland" },
+  { "value": "Israel", "label": "Israel" },
+  { "value": "Japan", "label": "Japan" },
+  { "value": "The Netherlands", "label": "The Netherlands" },
+  { "value": "Scotland", "label": "Scotland", "regions": [
+    { "value": "", "label": "-- Select Region --" },
+    { "value": "highland", "label": "Highland" },
+    { "value": "lowland", "label": "Lowland" },
+    { "value": "speyside", "label": "Speyside" },
+    { "value": "islay", "label": "Islay" },
+    { "value": "islands", "label": "Islands" },
+    { "value": "campbeltown", "label": "Campbeltown" }
+  ] },
+  { "value": "United States", "label": "United States", "regions": [
+    { "value": "", "label": "-- Select Region --" },
+    { "value": "kentucky", "label": "Kentucky" },
+    { "value": "tennessee", "label": "Tenessee" }
+  ] }
+]

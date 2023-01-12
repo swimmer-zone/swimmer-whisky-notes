@@ -1,0 +1,24 @@
+{
+  "brand": "",
+  "dateOfTasting": "",
+  "country": "",
+  "region": "",
+  "nearestTown": "",
+  "caskStrength": false,
+  "chillFiltered": false,
+  "type": "",
+  "age": "",
+  "strength": "",
+  "taster": false,
+  "url": "",
+  "tasting": {
+    "location": "",
+    "color": "Amber",
+    "glance": 50,
+    "flavour": "",
+    "finish": "",
+    "rating": 2.5,
+    "wouldBuy": false,
+    "notes": ""
+  }
+}

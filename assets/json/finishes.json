@@ -1,0 +1,9 @@
+[
+  { "value": "", "label": "-- Select Finish --" },
+  { "value": "Clean", "label": "Clean" },
+  { "value": "Sweet", "label": "Sweet" },
+  { "value": "Sour", "label": "Sour" },
+  { "value": "Salty", "label": "Salty" },
+  { "value": "Bitter", "label": "Bitter" },
+  { "value": "Spicy", "label": "Spicy" }
+]
