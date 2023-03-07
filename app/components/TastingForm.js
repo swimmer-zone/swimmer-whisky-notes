@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import {
+    AsyncStorage,
     StyleSheet,
     Text,
     View
@@ -9,12 +10,15 @@ import {
     FormItem,
     Picker
 } from 'react-native-form-component';
+import * as Location from 'expo-location';
+import MapView, { Marker } from 'react-native-maps';
 import Clipboard from '@react-native-clipboard/clipboard';
 import Slider from '@react-native-community/slider';
 import SwitchSelector from "react-native-switch-selector";
 import {
     jsonColors,
     jsonCountries,
+    jsonDistilleries,
     jsonFinishes,
     jsonFlavours,
     jsonInput,
@@ -22,9 +26,36 @@ import {
     jsonTypes
 } from '../../assets/json';
 import colors from '../misc/colors';
+import mapStyle from '../misc/mapStyle';
 
 const TastingForm = () => {
     const [ state, setState ] = useState(jsonInput);
+
+    const [ region, setRegion ] = useState({
+        "latitude": 51.5079145,
+        "longitude": -0.0899163,
+        "latitudeDelta": 0.1,
+        "longitudeDelta": 0.1
+    });
+    const [ marker, setMarker ] = useState({latitude: 0, longitude: 0});
+    const [ status, requestPermission ] = Location.useForegroundPermissions();
+
+    useEffect(() => {
+        (async () => {
+            let { status } = await Location.requestForegroundPermissionsAsync();
+
+            if (status === 'granted') {
+                let location = await Location.getCurrentPositionAsync({});
+
+                setRegion({
+                    "latitude": location.coords.latitude,
+                    "longitude": location.coords.longitude,
+                    "latitudeDelta": 0.5,
+                    "longitudeDelta": 0.5
+                });
+            }
+        })();
+    }, []);
 
     const copyJson = () => {
         Clipboard.setString(JSON.stringify(state, undefined, 4));
@@ -64,6 +95,9 @@ const TastingForm = () => {
     }
     const getColorId = (value) => {
         return jsonColors.filter( element => element.value == value)[0].id;
+    }
+    const getColorHex = (value) => {
+        return jsonColors.filter( element => element.value == value)[0].hex;
     }
 
     return (<Form onButtonPress={copyJson} buttonText={'Copy JSON'} buttonStyle={styles.button}>
@@ -211,26 +245,61 @@ const TastingForm = () => {
             value={state.url}
             onChangeText={(url) => setState({...state, url: url})}/>
 
-        <FormItem 
-            id="notes" 
-            key="notes" 
-            placeholder="Some notes..." 
-            textArea 
-            style={styles.input}
-            value={state.notes}
-            onChangeText={(notes) => setState({...state, notes: notes})}/>
+        <Text style={styles.h2}>My Tasting</Text>
 
-        {/* <hr/> */}
-
-        <View key="flavour-wrapper" style={styles.pickerWrapper}>
-            <Picker 
-                id="flavour" 
-                items={jsonFlavours} 
-                style={styles.input} 
-                isMulti
-                selectedValue={state.tasting.flavour}
-                onSelection={(item) => setState({...state, tasting: {...state.tasting, flavour: item.value}})}/>
+        <View style={styles.mapContainer}>
+            <MapView 
+                showsUserLocation={true}
+                style={styles.map}
+                initialRegion={region}
+                region={region}
+                customMapStyle={mapStyle}
+                onRegionChangeComplete={(region) => setRegion(region)}
+                onPress={(e) => setMarker({ latitude: e.nativeEvent.coordinate.latitude, longitude: e.nativeEvent.coordinate.longitude })}>
+                {
+                    jsonDistilleries.map((distillery, i) => (
+                        <Marker 
+                            coordinate={{"latitude": distillery.latitude, "longitude": distillery.longitude}} 
+                            key={i}
+                            image={require("../../assets/images/logo128.png")}>
+                            <Text style={{marginLeft: 44, marginTop: 12}}>{distillery.name}</Text>
+                        </Marker>
+                    ))
+                }
+                <Marker 
+                    coordinate={marker} 
+                    image={require("../../assets/images/glass128.png")}>
+                    <Text style={{marginLeft: 40, marginTop: 10}}>{'Tasting ' + state.brand}</Text>
+                </Marker>
+            </MapView>
         </View>
+        <FormItem 
+            id="location-text" 
+            key="location-text" 
+            type="text" 
+            readonly 
+            style={[styles.input, styles.readonly]}
+            value={'x: ' + region.latitude + ', y: ' + region.longitude}/>
+
+        <Slider
+            id="color"
+            key="color"
+            style={styles.slider}
+            minimumValue={1}
+            maximumValue={9}
+            step={1}
+            minimumTrackTintColor={colors.white}
+            maximumTrackTintColor={colors.black}
+            thumbTintColor={colors.black}
+            value={getColorId(state.tasting.color)}
+            onValueChange={(color) => setState({...state, tasting: {...state.tasting, color: getColor(color)}})}/>
+        <FormItem 
+            type="text" 
+            id="color-text" 
+            key="color-text" 
+            value={state.tasting.color} 
+            readonly 
+            style={{...styles.input, ...styles.readonly, backgroundColor: getColorHex(state.tasting.color)}}/>
 
         <Slider
             id="glance"
@@ -252,25 +321,15 @@ const TastingForm = () => {
             readonly 
             style={[styles.input, styles.readonly]}/>
 
-        <Slider
-            id="color"
-            key="color"
-            style={[styles.slider, styles.colors]}
-            minimumValue={1}
-            maximumValue={9}
-            step={1}
-            minimumTrackTintColor={colors.white}
-            maximumTrackTintColor={colors.black}
-            thumbTintColor={colors.black}
-            value={getColorId(state.tasting.color)}
-            onValueChange={(color) => setState({...state, tasting: {...state.tasting, color: getColor(color)}})}/>
-        <FormItem 
-            type="text" 
-            id="color-text" 
-            key="color-text" 
-            value={state.tasting.color} 
-            readonly 
-            style={[styles.input, styles.readonly]}/>
+        <View key="flavour-wrapper" style={styles.pickerWrapper}>
+            <Picker 
+                id="flavour" 
+                items={jsonFlavours} 
+                style={styles.input} 
+                isMulti
+                selectedValue={state.tasting.flavour}
+                onSelection={(item) => setState({...state, tasting: {...state.tasting, flavour: item.value}})}/>
+        </View>
 
         <View key="finish-wrapper" style={styles.pickerWrapper}>
             <Picker 
@@ -307,7 +366,7 @@ const TastingForm = () => {
             initial={1}
             borderRadius={8}
             borderWidth={-2}
-            onPress={(wouldBuy) => setState({...state, wouldBuy: wouldBuy})}
+            onPress={(wouldBuy) => setState({...state, tasting: {...state.tasting, wouldBuy: wouldBuy}})}
             textColor={colors.black}
             selectedColor={colors.white}
             buttonColor={colors.purple}
@@ -319,6 +378,15 @@ const TastingForm = () => {
                 { label: "Not again", value: false }
             ]}/>
 
+        <FormItem 
+            id="notes" 
+            key="notes" 
+            placeholder="Some notes..." 
+            textArea 
+            style={styles.input}
+            value={state.tasting.notes}
+            onChangeText={(notes) => setState({...state, tasting: {...state.tasting, notes: notes}})}/>
+
         <Text class="json_output" style={styles.output}>
             {JSON.stringify(state, undefined, 4)}
         </Text>
@@ -326,6 +394,13 @@ const TastingForm = () => {
 }
 
 const styles = StyleSheet.create({
+    h2: {
+        fontSize: 24,
+        fontWeight: "bold",
+        margin: 8,
+        marginTop: 16,
+        textAlign: "center"
+    },
     button: {
         backgroundColor: colors.black,
         color: colors.white,
@@ -368,15 +443,7 @@ const styles = StyleSheet.create({
     slider: {
         width: 350,
         marginLeft: 20,
-        marginBottom: 20,
-        elevation: 4,
-        shadowColor: colors.black,
-        shadowOffset: {
-            width: 4,
-            height: 4
-        },
-        shadowOpacity: 0.5,
-        shadowRadius: 4
+        marginBottom: 20
     },
     readonly: {
         backgroundColor: colors.white + '22',
@@ -384,6 +451,18 @@ const styles = StyleSheet.create({
     },
     colors: {
         height: 8
+    },
+    mapContainer: {
+        marginLeft: 20,
+        width: 350,
+        height: 350,
+        borderRadius: 8,
+        marginBottom: 10
+    },
+    map: {
+        width: 350,
+        height: 350,
+        borderRadius: 8
     },
     output: {
         borderRadius: 8,
@@ -406,11 +485,6 @@ const styles = StyleSheet.create({
         shadowRadius: 4,
         overflow: "hidden",
         fontSize: 16
-    },
-    hr: {
-        borderWidth: 1,
-        borderStyle: "solid",
-        borderColor: colors.black
     }
 });
 

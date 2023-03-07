@@ -38,10 +38,10 @@
         "url": "https://www.heijdenwijnimport.nl/product/1098995612/bells-blended-scotch-70cl",
         "tasting": {
             "location": "Whisky Museum, Edinburgh",
-            "flavour": "Toffee,Dark Fruit,Woody",
+            "flavour": "Toffee,Dark Fruit",
             "glance": "20",
             "color": "Honey",
-            "finish": "Bitter",
+            "finish": "Sweet",
             "rating": "2",
             "wouldBuy": false,
             "notes": ""
@@ -614,11 +614,11 @@
         "url": "https://www.heijdenwijnimport.nl/product/957565612/tomatin-legacy-70cl",
         "tasting": {
             "location": "Home",
-            "flavour": "Vanilla,Citrus",
-            "glance": "20",
+            "flavour": "...",
+            "glance": "0",
             "color": "Straw",
-            "finish": "Sweet",
-            "rating": "3",
+            "finish": "",
+            "rating": "",
             "wouldBuy": true,
             "notes": ""
         }
@@ -960,7 +960,7 @@
         }
     },
     {
-        "brand": "Teeling New Make",
+        "brand": "Teeling",
         "dateOfTasting": "2022-09-04",
         "country": "Ireland",
         "region": "ireland",
@@ -1176,7 +1176,7 @@
         }
     },
     {
-        "brand": "Tullibardine Sovereign",
+        "brand": "Tullibardine Soveeign",
         "dateOfTasting": "2022-12-26",
         "country": "Scotland",
         "region": "highland",
@@ -1219,7 +1219,7 @@
             "color": "Amber",
             "finish": "Spicy",
             "rating": "3",
-            "wouldBuy": false,
+            "wouldBuy": true,
             "notes": ""
         }
     },
@@ -1479,7 +1479,7 @@
         }
     },
     {
-        "brand": "Teeling Single Grain",
+        "brand": "Teeling",
         "dateOfTasting": "2023-01-18",
         "country": "Ireland",
         "region": "ireland",
@@ -1489,11 +1489,11 @@
         "age": "-",
         "strength": "46",
         "taster": false,
-        "url": "https://www.heijdenwijnimport.nl/product/329285612/teeling-single-grain-wine-cask",
+        "url": "",
         "tasting": {
             "location": "Teeling Distillery, Dublin",
-            "flavour": "Red Fruit",
-            "glance": "40",
+            "flavour": "...",
+            "glance": "30",
             "color": "Golden",
             "finish": "Sweet",
             "rating": "4.5",
@@ -1502,30 +1502,30 @@
         }
     },
     {
-        "brand": "Teeling Small Batch",
+        "brand": "Teeling",
         "dateOfTasting": "2023-01-18",
         "country": "Ireland",
         "region": "ireland",
         "caskStrength": false,
         "chillFiltered": true,
-        "type": "Single Malt",
+        "type": "?",
         "age": "-",
-        "strength": "46",
+        "strength": "?",
         "taster": false,
         "url": "",
         "tasting": {
             "location": "Teeling Distillery, Dublin",
-            "flavour": "Vanilla,Spicy,Raisin",
-            "glance": "20",
-            "color": "Straw",
+            "flavour": "...",
+            "glance": "30",
+            "color": "Golden",
             "finish": "Sweet",
             "rating": "4.5",
             "wouldBuy": true,
-            "notes": ""
+            "notes": "Pot Still?"
         }
     },
     {
-        "brand": "Teeling Single Malt",
+        "brand": "Teeling",
         "dateOfTasting": "2023-01-18",
         "country": "Ireland",
         "region": "ireland",
@@ -1535,62 +1535,16 @@
         "age": "46",
         "strength": "46",
         "taster": false,
-        "url": "https://www.heijdenwijnimport.nl/product/329595612/teeling-single-malt",
+        "url": "",
         "tasting": {
             "location": "Teeling Distillery, Dublin",
-            "flavour": "Chocolate,Spicy,Fruity",
-            "glance": "20",
-            "color": "Straw",
-            "finish": "Spicy",
-            "rating": "4.5",
-            "wouldBuy": true,
-            "notes": ""
-        }
-    },
-    {
-        "brand": "Teeling Single Pot Still",
-        "dateOfTasting": "2023-01-18",
-        "country": "Ireland",
-        "region": "ireland",
-        "caskStrength": false,
-        "chillFiltered": true,
-        "type": "Single Malt",
-        "age": "-",
-        "strength": "46",
-        "taster": false,
-        "url": "https://www.drankgigant.nl/teeling-single-pot-still.html",
-        "tasting": {
-            "location": "Teeling Distillery, Dublin",
-            "flavour": "Fruity,Grapefruit,Mango",
-            "glance": "50",
-            "color": "Straw",
-            "finish": "Spicy",
-            "rating": "4.5",
-            "wouldBuy": true,
-            "notes": ""
-        }
-    },
-    {
-        "brand": "Teeling Blackpitts",
-        "dateOfTasting": "2023-01-18",
-        "country": "Ireland",
-        "region": "ireland",
-        "caskStrength": false,
-        "chillFiltered": true,
-        "type": "Single Malt",
-        "age": "-",
-        "strength": "46",
-        "taster": false,
-        "url": "https://www.heijdenwijnimport.nl/product/1083865612/teeling-blackpitts-peated",
-        "tasting": {
-            "location": "Teeling Distillery, Dublin",
-            "flavour": "Peaty",
-            "glance": "50",
-            "color": "Straw",
+            "flavour": "...",
+            "glance": "30",
+            "color": "Golden",
             "finish": "Sweet",
             "rating": "4.5",
             "wouldBuy": true,
-            "notes": ""
+            "notes": "Small Batch"
         }
     },
     {
@@ -1607,7 +1561,7 @@
         "taster": true,
         "url": "Alko",
         "tasting": {
-            "location": "Arctic Guesthouse, Rovaniemi",
+            "location": "Home",
             "flavour": "Peaty,Malty,Woody",
             "glance": "40",
             "color": "Golden",
@@ -1629,9 +1583,9 @@
         "age": "",
         "strength": "43",
         "taster": false,
-        "url": "",
+        "url": "Oliver's Pub",
         "tasting": {
-            "location": "Oliver's Pub, Rovaniemi",
+            "location": "Home",
             "flavour": "Spicy,Peaty,Peach,Plum,Pear",
             "glance": "60",
             "color": "Golden",
@@ -1639,198 +1593,6 @@
             "rating": "3",
             "would_buy": false,
             "notes": ""
-        }
-    },
-    {
-        "brand": "Haig Club Clubman",
-        "date_of_tasting": "2023-01-25",
-        "country": "Scotland",
-        "region": "lowland",
-        "nearest_town": "Cameronbridge",
-        "cask_strength": false,
-        "chill_filtered": false,
-        "type": "Single Grain",
-        "age": "",
-        "strength": "40",
-        "taster": false,
-        "url": "",
-        "tasting": {
-            "location": "Wetherspoon, Dublin",
-            "flavour": "Spicy,Citrus",
-            "glance": "10",
-            "color": "Straw",
-            "finish": "Spicy",
-            "rating": "3",
-            "would_buy": false,
-            "notes": ""
-        }
-    },
-    {
-        "brand": "Glenmorangie",
-        "date_of_tasting": "2023-01-25",
-        "country": "Scotland",
-        "region": "highland",
-        "nearest_town": "Glenmorangie",
-        "cask_strength": false,
-        "chill_filtered": false,
-        "type": "Single Malt",
-        "age": "10",
-        "strength": "40",
-        "taster": false,
-        "url": "",
-        "tasting": {
-            "location": "Wetherspoon, Dublin",
-            "flavour": "Floral,Malty,Citrus",
-            "glance": "50",
-            "color": "Straw",
-            "finish": "Sweet",
-            "rating": "2.5",
-            "would_buy": false,
-            "notes": ""
-        }
-    },
-    {
-        "brand": "Buffalo Trace",
-        "date_of_tasting": "2023-01-25",
-        "country": "United States",
-        "region": "usa",
-        "nearest_town": "Buffalo Trace",
-        "cask_strength": false,
-        "chill_filtered": false,
-        "type": "Bourbon",
-        "age": "",
-        "strength": "40",
-        "taster": false,
-        "url": "",
-        "tasting": {
-            "location": "Wetherspoon, Dublin",
-            "flavour": "Woody",
-            "glance": "50",
-            "color": "Honey",
-            "finish": "Sweet",
-            "rating": "1.5",
-            "would_buy": false,
-            "notes": ""
-        }
-    },
-    {
-        "brand": "Jim Beam",
-        "date_of_tasting": "2023-01-25",
-        "country": "United States",
-        "region": "usa",
-        "nearest_town": "Jim Beam",
-        "cask_strength": false,
-        "chill_filtered": false,
-        "type": "Bourbon",
-        "age": "4",
-        "strength": "40",
-        "taster": false,
-        "url": "Wetherspoon",
-        "tasting": {
-            "location": "Wetherspoon, Dublin",
-            "flavour": "Spicy,Woody",
-            "glance": "40",
-            "color": "Amber",
-            "finish": "Sweet",
-            "rating": "2.5",
-            "would_buy": false,
-            "notes": ""
-        }
-    },
-    {
-        "brand": "Bushmills",
-        "dateOfTasting": "2023-01-31",
-        "country": "Ireland",
-        "region": "ireland",
-        "nearestTown": "Bushmills",
-        "caskStrength": false,
-        "chillFiltered": false,
-        "type": "Blended Malt",
-        "age": "-",
-        "strength": "40",
-        "taster": true,
-        "url": "https://www.heijdenwijnimport.nl/product/1061175612/bushmills-original",
-        "tasting": {
-            "location": "Home",
-            "flavour": "Cereal,Fruity",
-            "glance": "10",
-            "color": "Straw",
-            "finish": "Salty",
-            "rating": "3",
-            "wouldBuy": false,
-            "notes": ""
-        }
-    },
-    {
-        "brand": "Penderyn",
-        "dateOfTasting": "2023-01-31",
-        "country": "Wales",
-        "region": "wales",
-        "nearestTown": "",
-        "caskStrength": false,
-        "chillFiltered": false,
-        "type": "Single Malt",
-        "age": "-",
-        "strength": "41",
-        "taster": true,
-        "url": "https://www.heijdenwijnimport.nl/product/1090715612/penderyn-legend",
-        "tasting": {
-            "location": "Home",
-            "flavour": "Malty,Red Fruit,Peaty",
-            "glance": "40",
-            "color": "Straw",
-            "finish": "Salty",
-            "rating": "3",
-            "wouldBuy": false,
-            "notes": ""
-        }
-    },
-    {     
-        "brand": "The Irishman",
-        "dateOfTasting": "2023-02-05",
-        "country": "Ireland",
-        "region": "ireland",
-        "nearestTown": "Carlow",
-        "caskStrength": false,
-        "chillFiltered": false,
-        "type": "Single Malt",
-        "age": "-",
-        "strength": "40",
-        "taster": true,
-        "url": "",
-        "tasting": {
-            "location": "Home",
-            "flavour": "Malty,Woody",
-            "glance": "50",
-            "color": "Amber",
-            "finish": "Salty",
-            "rating": "2.5",
-            "wouldBuy": false,
-            "notes": ""
-        }
-    },
-    {
-        "brand": "Millstone",
-        "dateOfTasting": "2023-02-10",
-        "country": "The Netherlands",
-        "region": "netherlands",
-        "nearestTown": "Baarle-Nassau",
-        "caskStrength": false,
-        "chillFiltered": false,
-        "type": "Single Malt",
-        "age": "-",
-        "strength": "43",
-        "taster": false,
-        "url": "https://www.heijdenwijnimport.nl/product/1106605612/millstone-american-oak",
-        "tasting": {
-            "location": "Home",
-            "flavour": "Malty,Peaty",
-            "glance": "20",
-            "color": "Mahogany",
-            "finish": "Clean",
-            "rating": "3.5",
-            "wouldBuy": true,
-            "notes": "Double distilled"
         }
     }
 ]

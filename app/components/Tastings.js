@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import {
+    Alert,
     Dimensions,
     Image,
     Modal,
@@ -14,12 +15,51 @@ import {
     FormItem,
     Picker
 } from 'react-native-form-component';
+import Swipeout from 'react-native-swipeout';
 import { jsonTastings } from '../../assets/json';
 import Accordion from '../components/Accordion';
 import colors from '../misc/colors';
+import { realm as realmTasting } from '../../databases/tasting';
 
 const windowDimensions = Dimensions.get('window');
 const screenDimensions = Dimensions.get('screen');
+
+const TastingItem = props => {
+    const { id, brand } = props;
+    const showEditModal = () => {
+
+    };
+    const confirmDelete = () => {
+        Alert.alert(
+            'Delete',
+            'Delete a tasting',
+            [
+                {
+                    text: 'No', onPress: () => {}
+                },
+                {
+                    text: 'Yes', onPress: () => {}
+                }
+            ]
+        );
+    };
+    return (<Swipeout right={[
+        {
+            text: 'Edit', 
+            backgroundColor: 'green', 
+            onPress: showEditModal
+        }, {
+            text: 'Delete', 
+            backgroundColor: 'red', 
+            onPress: confirmDelete
+        }]} autoClose={true}>
+        <TouchableOpacity onPress={onPressItem}>
+            <View>
+                <Text>{brand}</Text>
+            </View>
+        </TouchableOpacity>
+    </Swipeout>);
+};
 
 const Tastings = () => {
     const [ show, setShow ] = useState(false);
@@ -28,6 +68,28 @@ const Tastings = () => {
     const [ sort, setSort ] = useState("");
     const [ filter, setFilter ] = useState("");
     const [ filters, setFilters ] = useState("");
+
+    const [ tastings, setTastings ] = useState([]);
+
+    reloadData = () => {
+        realmTasting._read().then((tastings) => {
+            setTastings(tastings);
+        }).catch((error) => {
+
+        });
+        console.log('reloadData', tastings);
+    };
+
+    // if (isAddNew == true) {
+        const newTasting = {
+            id: Math.floor(Date.now() / 1000),
+            brand: 'Test',
+            createdAt: new Date()
+        };
+        realmTasting._create(newTasting).then().catch((error) => {
+            alert('Create new Tasting failed: ' + error);
+        });
+    // }
 
     const jsonSort = [
         { "value": "", "label": "-- Sort --" },

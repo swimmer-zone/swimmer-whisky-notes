@@ -10,6 +10,7 @@ import {
 } from 'react-native';
 import Ext from '../components/Ext';
 import colors from '../misc/colors';
+import packageJson from '../package.json';
 
 const About = () => {
     const [ show, setShow ] = useState(false);
@@ -26,7 +27,7 @@ const About = () => {
                 <View style={styles.modalView}>
                     <Text style={styles.h1}>About</Text>
                     <Text style={styles.p}>
-                        Version 1.0.0
+                        Version {packageJson.version}
                     </Text>
                     <Text style={styles.p}>
                         Developed by Swimmer to simplify adding new whiskies to my website while tasting. This app 
